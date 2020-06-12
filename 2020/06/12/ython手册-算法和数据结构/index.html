@@ -143,7 +143,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    4.1k 字
+                    4.2k 字
                   </span>
                 
 
@@ -153,7 +153,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    58
+                    60
                      分钟
                   </span>
                 
@@ -182,8 +182,8 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h2 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h2><h3 id="将序列分解为单独的变量（赋值）"><a href="#将序列分解为单独的变量（赋值）" class="headerlink" title="将序列分解为单独的变量（赋值）"></a>将序列分解为单独的变量（赋值）</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>有一个包含N个元素的元组或序列，现在将它分解为N个单独的变量</p>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>简单的赋值操作来分解为单独的变量。</p>
+              <h2 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h2><h3 id="1、将序列分解为单独的变量（赋值）"><a href="#1、将序列分解为单独的变量（赋值）" class="headerlink" title="1、将序列分解为单独的变量（赋值）"></a>1、将序列分解为单独的变量（赋值）</h3><h4 id="1-1、问题"><a href="#1-1、问题" class="headerlink" title="1.1、问题"></a>1.1、问题</h4><p>有一个包含N个元素的元组或序列，现在将它分解为N个单独的变量</p>
+<h4 id="1-2、解决方案"><a href="#1-2、解决方案" class="headerlink" title="1.2、解决方案"></a>1.2、解决方案</h4><p>简单的赋值操作来分解为单独的变量。</p>
 <p>唯一的要求是变量的总数和结构要与序列相吻合。</p>
 <pre><code class="hljs python">p = (<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)
 x,y = p</code></pre>
@@ -256,8 +256,8 @@ a,b,c,d,e = s</code></pre>
 <pre><code class="hljs python">data = [<span class="hljs-string">'ACME'</span>,<span class="hljs-number">50</span>,<span class="hljs-number">91.1</span>,(<span class="hljs-number">2020</span>,<span class="hljs-number">6</span>,<span class="hljs-number">9</span>)]
 _,shares,price,_ = data</code></pre>
 
-<h3 id="从任意长度的可迭代对象分解元素-赋值"><a href="#从任意长度的可迭代对象分解元素-赋值" class="headerlink" title="从任意长度的可迭代对象分解元素(赋值)"></a>从任意长度的可迭代对象分解元素(赋值)</h3><h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><p>需要从某个可迭代对象中分解出N个元素，但是这个可迭代对象的长度可以超过N，这会导致出现“分解的值过多”的异常。</p>
-<h4 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h4><p>Python的“*表达式”可以用来解决这个问题。</p>
+<h3 id="2、从任意长度的可迭代对象分解元素-赋值"><a href="#2、从任意长度的可迭代对象分解元素-赋值" class="headerlink" title="2、从任意长度的可迭代对象分解元素(赋值)"></a>2、从任意长度的可迭代对象分解元素(赋值)</h3><h4 id="2-1、问题"><a href="#2-1、问题" class="headerlink" title="2.1、问题"></a>2.1、问题</h4><p>需要从某个可迭代对象中分解出N个元素，但是这个可迭代对象的长度可以超过N，这会导致出现“分解的值过多”的异常。</p>
+<h4 id="2-2、解决方案"><a href="#2-2、解决方案" class="headerlink" title="2.2、解决方案"></a>2.2、解决方案</h4><p>Python的“*表达式”可以用来解决这个问题。</p>
 <pre><code class="hljs python">record = (<span class="hljs-string">'Dave'</span>,<span class="hljs-string">'dave@example.com'</span>,<span class="hljs-string">'773-555-1212'</span>,<span class="hljs-string">'847-555-1212'</span>)
 name,email,*phone_numbers = record</code></pre>
 
@@ -272,8 +272,8 @@ name,email,*phone_numbers = record</code></pre>
 
 
 
-<pre><code>[&apos;773-555-1212&apos;, &apos;847-555-1212&apos;]</code></pre><h3 id="保存最后N个元素-队列"><a href="#保存最后N个元素-队列" class="headerlink" title="保存最后N个元素(队列)"></a>保存最后N个元素(队列)</h3><p>在迭代或是其他形式的处理过程中对最后几项记录做一个有限的历史纪录统计。</p>
-<h4 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h4><p>使用队列，<code>collections.deque</code>的完美应用场景。</p>
+<pre><code>[&apos;773-555-1212&apos;, &apos;847-555-1212&apos;]</code></pre><h3 id="3、保存最后N个元素-队列"><a href="#3、保存最后N个元素-队列" class="headerlink" title="3、保存最后N个元素(队列)"></a>3、保存最后N个元素(队列)</h3><p>在迭代或是其他形式的处理过程中对最后几项记录做一个有限的历史纪录统计。</p>
+<h4 id="3-1、解决方案"><a href="#3-1、解决方案" class="headerlink" title="3.1、解决方案"></a>3.1、解决方案</h4><p>使用队列，<code>collections.deque</code>的完美应用场景。</p>
 <p>下面的代码对一系列文本行做简单的文本匹配操作，当发现有匹配时就输出点给钱的匹配行以及最后检查过的N行文本。</p>
 <pre><code class="hljs python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> deque
 
@@ -342,8 +342,8 @@ p</code></pre>
 
 
 
-<pre><code>5</code></pre><h3 id="找到最大或最小的N个元素-堆"><a href="#找到最大或最小的N个元素-堆" class="headerlink" title="找到最大或最小的N个元素(堆)"></a>找到最大或最小的N个元素(堆)</h3><h4 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h4><p>在某个集合中找出最大或最小的N个元素。</p>
-<h4 id="解决方案-3"><a href="#解决方案-3" class="headerlink" title="解决方案"></a>解决方案</h4><p>堆排序<code>heapq</code>模块中有两个函数——<code>nlargest()</code>和<code>nsmallest()</code>——正是我们所需要的。</p>
+<pre><code>5</code></pre><h3 id="4、找到最大或最小的N个元素-堆"><a href="#4、找到最大或最小的N个元素-堆" class="headerlink" title="4、找到最大或最小的N个元素(堆)"></a>4、找到最大或最小的N个元素(堆)</h3><h4 id="4-1、问题"><a href="#4-1、问题" class="headerlink" title="4.1、问题"></a>4.1、问题</h4><p>在某个集合中找出最大或最小的N个元素。</p>
+<h4 id="4-2、解决方案"><a href="#4-2、解决方案" class="headerlink" title="4.2、解决方案"></a>4.2、解决方案</h4><p>堆排序<code>heapq</code>模块中有两个函数——<code>nlargest()</code>和<code>nsmallest()</code>——正是我们所需要的。</p>
 <pre><code class="hljs python"><span class="hljs-keyword">import</span> heapq
 nums = [<span class="hljs-number">1</span>,<span class="hljs-number">8</span>,<span class="hljs-number">2</span>,<span class="hljs-number">23</span>,<span class="hljs-number">7</span>,<span class="hljs-number">-4</span>,<span class="hljs-number">18</span>,<span class="hljs-number">23</span>,<span class="hljs-number">42</span>,<span class="hljs-number">37</span>,<span class="hljs-number">2</span>]
 print(heapq.nlargest(<span class="hljs-number">3</span>,nums))
@@ -381,8 +381,8 @@ expensive = heapq.nlargest(<span class="hljs-number">3</span>,protfo,key = <span
 
 <pre><code>[{&apos;name&apos;: &apos;AAPL&apos;, &apos;shares&apos;: 80, &apos;price&apos;: 543.22},
  {&apos;name&apos;: &apos;IBM&apos;, &apos;shares&apos;: 100, &apos;price&apos;: 91.1},
- {&apos;name&apos;: &apos;ACME&apos;, &apos;shares&apos;: 40, &apos;price&apos;: 50.1}]</code></pre><h3 id="实现优先级队列（堆）"><a href="#实现优先级队列（堆）" class="headerlink" title="实现优先级队列（堆）"></a>实现优先级队列（堆）</h3><h4 id="问题-3"><a href="#问题-3" class="headerlink" title="问题"></a>问题</h4><p>实现一个队列，以给定的优先级对元素排序，且每次pop操作都会返回优先级最高的那个元素。</p>
-<h4 id="解决方案-4"><a href="#解决方案-4" class="headerlink" title="解决方案"></a>解决方案</h4><pre><code class="hljs python"><span class="hljs-keyword">import</span> heapq
+ {&apos;name&apos;: &apos;ACME&apos;, &apos;shares&apos;: 40, &apos;price&apos;: 50.1}]</code></pre><h3 id="5、实现优先级队列（堆）"><a href="#5、实现优先级队列（堆）" class="headerlink" title="5、实现优先级队列（堆）"></a>5、实现优先级队列（堆）</h3><h4 id="5-1、问题"><a href="#5-1、问题" class="headerlink" title="5.1、问题"></a>5.1、问题</h4><p>实现一个队列，以给定的优先级对元素排序，且每次pop操作都会返回优先级最高的那个元素。</p>
+<h4 id="5-2、解决方案"><a href="#5-2、解决方案" class="headerlink" title="5.2、解决方案"></a>5.2、解决方案</h4><pre><code class="hljs python"><span class="hljs-keyword">import</span> heapq
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PriorityQueue</span>:</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
         self._queue = []
@@ -420,8 +420,8 @@ q.pop()</code></pre>
 <pre><code>Item(&apos;bar&apos;)</code></pre><blockquote>
 <p>第一次执行pop()操作时返回的元素具有最高的优先级。相同优先级的返回顺序同插入到队列时的顺序相同</p>
 </blockquote>
-<h3 id="在字典中将键映射到多个值上（defaultdict）"><a href="#在字典中将键映射到多个值上（defaultdict）" class="headerlink" title="在字典中将键映射到多个值上（defaultdict）"></a>在字典中将键映射到多个值上（defaultdict）</h3><h4 id="问题-4"><a href="#问题-4" class="headerlink" title="问题"></a>问题</h4><p>一个能将键（key）映射到多个值的字典（即所谓的一键多值[multidict]）</p>
-<h4 id="解决方案-5"><a href="#解决方案-5" class="headerlink" title="解决方案"></a>解决方案</h4><p>可以将这个多值保存到另一个容器如列表或稽核中。</p>
+<h3 id="6、在字典中将键映射到多个值上（defaultdict）"><a href="#6、在字典中将键映射到多个值上（defaultdict）" class="headerlink" title="6、在字典中将键映射到多个值上（defaultdict）"></a>6、在字典中将键映射到多个值上（defaultdict）</h3><h4 id="6-1、问题"><a href="#6-1、问题" class="headerlink" title="6.1、问题"></a>6.1、问题</h4><p>一个能将键（key）映射到多个值的字典（即所谓的一键多值[multidict]）</p>
+<h4 id="6-2、解决方案"><a href="#6-2、解决方案" class="headerlink" title="6.2、解决方案"></a>6.2、解决方案</h4><p>可以将这个多值保存到另一个容器如列表或稽核中。</p>
 <pre><code class="hljs python">d = &#123;
     <span class="hljs-string">'a'</span>:[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],
     <span class="hljs-string">'b'</span>:[<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
@@ -455,8 +455,8 @@ b[<span class="hljs-string">'b'</span>].append(<span class="hljs-number">1</span
 <pre><code>defaultdict(list, {&apos;a&apos;: [1, 2], &apos;b&apos;: [1]})</code></pre><blockquote>
 <p>原则上，构建一个一键多值字典是很容易的。但是如果试着对第一个值做初始化操作，就会变得杂乱，如需要判断这个键是否存在。使用defaultdict后，只需添加元素就可以了，不用在意这个键是否存在</p>
 </blockquote>
-<h3 id="让字典保持有序（OrderdDict双向链表）"><a href="#让字典保持有序（OrderdDict双向链表）" class="headerlink" title="让字典保持有序（OrderdDict双向链表）"></a>让字典保持有序（OrderdDict双向链表）</h3><h4 id="问题-5"><a href="#问题-5" class="headerlink" title="问题"></a>问题</h4><p>创建一个字典，同时当对字典做迭代或序列化操作时，也能控制其中元素的顺序。</p>
-<h4 id="解决方案-6"><a href="#解决方案-6" class="headerlink" title="解决方案"></a>解决方案</h4><p>使用collections模块中的OrderedDict类。当对字典做迭代时，严格按照元素初始添加的顺序进行。</p>
+<h3 id="7、让字典保持有序（OrderdDict双向链表）"><a href="#7、让字典保持有序（OrderdDict双向链表）" class="headerlink" title="7、让字典保持有序（OrderdDict双向链表）"></a>7、让字典保持有序（OrderdDict双向链表）</h3><h4 id="7-1、问题"><a href="#7-1、问题" class="headerlink" title="7.1、问题"></a>7.1、问题</h4><p>创建一个字典，同时当对字典做迭代或序列化操作时，也能控制其中元素的顺序。</p>
+<h4 id="7-2、解决方案"><a href="#7-2、解决方案" class="headerlink" title="7.2、解决方案"></a>7.2、解决方案</h4><p>使用collections模块中的OrderedDict类。当对字典做迭代时，严格按照元素初始添加的顺序进行。</p>
 <pre><code class="hljs python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> OrderedDict
 
 d = OrderedDict()
@@ -473,8 +473,8 @@ d</code></pre>
 <blockquote>
 <p>OrderedDict的大小时普通字典的2倍多。</p>
 </blockquote>
-<h3 id="与字典有关的计算问题（zip（））"><a href="#与字典有关的计算问题（zip（））" class="headerlink" title="与字典有关的计算问题（zip（））"></a>与字典有关的计算问题（zip（））</h3><h4 id="问题-6"><a href="#问题-6" class="headerlink" title="问题"></a>问题</h4><p>在字典上对数据执行各式各样的计算（比如求最小值、最大值、排序等）</p>
-<h4 id="解决方案-7"><a href="#解决方案-7" class="headerlink" title="解决方案"></a>解决方案</h4><pre><code class="hljs python">prices = &#123;
+<h3 id="8、与字典有关的计算问题（zip（））"><a href="#8、与字典有关的计算问题（zip（））" class="headerlink" title="8、与字典有关的计算问题（zip（））"></a>8、与字典有关的计算问题（zip（））</h3><h4 id="8-1、问题"><a href="#8-1、问题" class="headerlink" title="8.1、问题"></a>8.1、问题</h4><p>在字典上对数据执行各式各样的计算（比如求最小值、最大值、排序等）</p>
+<h4 id="8-2、解决方案"><a href="#8-2、解决方案" class="headerlink" title="8.2、解决方案"></a>8.2、解决方案</h4><pre><code class="hljs python">prices = &#123;
     <span class="hljs-string">'ACME'</span>:<span class="hljs-number">45.23</span>,
     <span class="hljs-string">'AAPL'</span>:<span class="hljs-number">612.75</span>,
     <span class="hljs-string">'IBM'</span>:<span class="hljs-number">205.55</span>,
@@ -494,8 +494,8 @@ d</code></pre>
 <pre><code>(10.75, &apos;FB&apos;)</code></pre><blockquote>
 <p>zip()创建了一个迭代器，他的内同只能被消费一次。</p>
 </blockquote>
-<h3 id="在两个字典中寻找相同点（keys-、items-集合操作）"><a href="#在两个字典中寻找相同点（keys-、items-集合操作）" class="headerlink" title="在两个字典中寻找相同点（keys()、items()集合操作）"></a>在两个字典中寻找相同点（keys()、items()集合操作）</h3><h4 id="问题-7"><a href="#问题-7" class="headerlink" title="问题"></a>问题</h4><p>有两个字典，找到他们中间可能相同的地方（相同的键、相同的值）。</p>
-<h4 id="解决方案-8"><a href="#解决方案-8" class="headerlink" title="解决方案"></a>解决方案</h4><p>通过keys()或items()方法执行常见的集合操作即可。</p>
+<h3 id="9、在两个字典中寻找相同点（keys-、items-集合操作）"><a href="#9、在两个字典中寻找相同点（keys-、items-集合操作）" class="headerlink" title="9、在两个字典中寻找相同点（keys()、items()集合操作）"></a>9、在两个字典中寻找相同点（keys()、items()集合操作）</h3><h4 id="9-1、问题"><a href="#9-1、问题" class="headerlink" title="9.1、问题"></a>9.1、问题</h4><p>有两个字典，找到他们中间可能相同的地方（相同的键、相同的值）。</p>
+<h4 id="9-2、解决方案"><a href="#9-2、解决方案" class="headerlink" title="9.2、解决方案"></a>9.2、解决方案</h4><p>通过keys()或items()方法执行常见的集合操作即可。</p>
 <pre><code class="hljs python">a = &#123;
     <span class="hljs-string">'x'</span>:<span class="hljs-number">1</span>,
     <span class="hljs-string">'y'</span>:<span class="hljs-number">2</span>,
@@ -518,8 +518,8 @@ b=&#123;
 
 
 
-<pre><code>{(&apos;y&apos;, 2)}</code></pre><h3 id="从序列中移除重复项且保持元素之间顺序不变"><a href="#从序列中移除重复项且保持元素之间顺序不变" class="headerlink" title="从序列中移除重复项且保持元素之间顺序不变"></a>从序列中移除重复项且保持元素之间顺序不变</h3><h4 id="问题-8"><a href="#问题-8" class="headerlink" title="问题"></a>问题</h4><p>去除序列中出现的重复元素，但仍然保持剩下的元素顺序不变。</p>
-<h4 id="解决方案-9"><a href="#解决方案-9" class="headerlink" title="解决方案"></a>解决方案</h4><p>如果序列中的值是可哈希的，那么这个问题可以通过使用集合和生成器轻松解决。</p>
+<pre><code>{(&apos;y&apos;, 2)}</code></pre><h3 id="10、从序列中移除重复项且保持元素之间顺序不变"><a href="#10、从序列中移除重复项且保持元素之间顺序不变" class="headerlink" title="10、从序列中移除重复项且保持元素之间顺序不变"></a>10、从序列中移除重复项且保持元素之间顺序不变</h3><h4 id="10-1、问题"><a href="#10-1、问题" class="headerlink" title="10.1、问题"></a>10.1、问题</h4><p>去除序列中出现的重复元素，但仍然保持剩下的元素顺序不变。</p>
+<h4 id="10-2、解决方案"><a href="#10-2、解决方案" class="headerlink" title="10.2、解决方案"></a>10.2、解决方案</h4><p>如果序列中的值是可哈希的，那么这个问题可以通过使用集合和生成器轻松解决。</p>
 <pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dedupe</span><span class="hljs-params">(items)</span>:</span>
     seen = set()
     <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> items:
@@ -543,8 +543,8 @@ list(dedupe(a))</code></pre>
             <span class="hljs-keyword">yield</span> item
             seen.add(item)</code></pre>
 
-<h3 id="对切片名命（slice-l-r-）"><a href="#对切片名命（slice-l-r-）" class="headerlink" title="对切片名命（slice(l,r)）"></a>对切片名命（slice(l,r)）</h3><h4 id="问题-9"><a href="#问题-9" class="headerlink" title="问题"></a>问题</h4><p>代码中都是切片的索引，难以阅读</p>
-<h4 id="解决方案-10"><a href="#解决方案-10" class="headerlink" title="解决方案"></a>解决方案</h4><p>slice(l,r),从l到r固定取数据,后续使用别名即可</p>
+<h3 id="11、对切片名命（slice-l-r-）"><a href="#11、对切片名命（slice-l-r-）" class="headerlink" title="11、对切片名命（slice(l,r)）"></a>11、对切片名命（slice(l,r)）</h3><h4 id="11-1、问题"><a href="#11-1、问题" class="headerlink" title="11.1、问题"></a>11.1、问题</h4><p>代码中都是切片的索引，难以阅读</p>
+<h4 id="11-2、解决方案"><a href="#11-2、解决方案" class="headerlink" title="11.2、解决方案"></a>11.2、解决方案</h4><p>slice(l,r),从l到r固定取数据,后续使用别名即可</p>
 <pre><code class="hljs python">s = <span class="hljs-string">'01234567890123456789199401234567891018'</span>
 year = slice(<span class="hljs-number">20</span>,<span class="hljs-number">24</span>)
 cost = int(s[year])</code></pre>
@@ -570,8 +570,8 @@ cost = int(s[year])</code></pre>
 <blockquote>
 <p>slice(l,r),可以通过start、stop、step获取切片索引和步长</p>
 </blockquote>
-<h3 id="找出序列中出现次数最多的元素（Counter-）"><a href="#找出序列中出现次数最多的元素（Counter-）" class="headerlink" title="找出序列中出现次数最多的元素（Counter()）"></a>找出序列中出现次数最多的元素（Counter()）</h3><h4 id="问题-10"><a href="#问题-10" class="headerlink" title="问题"></a>问题</h4><p>有一个元素序列，想知道在序列中出现的次数最多的元素是什么。</p>
-<h4 id="解决方案-11"><a href="#解决方案-11" class="headerlink" title="解决方案"></a>解决方案</h4><p>collections模块中的Counter类正是为此类问题所设计的。most_common()方法可以直接告诉我们答案</p>
+<h3 id="12、找出序列中出现次数最多的元素（Counter-）"><a href="#12、找出序列中出现次数最多的元素（Counter-）" class="headerlink" title="12、找出序列中出现次数最多的元素（Counter()）"></a>12、找出序列中出现次数最多的元素（Counter()）</h3><h4 id="12-1、问题"><a href="#12-1、问题" class="headerlink" title="12.1、问题"></a>12.1、问题</h4><p>有一个元素序列，想知道在序列中出现的次数最多的元素是什么。</p>
+<h4 id="12-2、解决方案"><a href="#12-2、解决方案" class="headerlink" title="12.2、解决方案"></a>12.2、解决方案</h4><p>collections模块中的Counter类正是为此类问题所设计的。most_common()方法可以直接告诉我们答案</p>
 <pre><code class="hljs python">words = [<span class="hljs-string">'look'</span>,<span class="hljs-string">'into'</span>,<span class="hljs-string">'eyes'</span>,<span class="hljs-string">'my'</span>,<span class="hljs-string">'eyes'</span>,<span class="hljs-string">'look'</span>,<span class="hljs-string">'into'</span>,<span class="hljs-string">'look'</span>,<span class="hljs-string">'my'</span>,<span class="hljs-string">'look'</span>,<span class="hljs-string">'eyes'</span>,<span class="hljs-string">'the'</span>,<span class="hljs-string">'eyes'</span>]</code></pre>
 
 
@@ -585,8 +585,8 @@ top_two = word_counts.most_common(<span class="hljs-number">3</span>)</code></pr
 
 
 
-<pre><code>[(&apos;look&apos;, 4), (&apos;eyes&apos;, 4), (&apos;into&apos;, 2)]</code></pre><h3 id="通过公共键对字典列表排序-itemgetter"><a href="#通过公共键对字典列表排序-itemgetter" class="headerlink" title="通过公共键对字典列表排序(itemgetter)"></a>通过公共键对字典列表排序(itemgetter)</h3><h4 id="问题-11"><a href="#问题-11" class="headerlink" title="问题"></a>问题</h4><p>一个字典列表，想根据一个或多个字典中的值来对列表排序</p>
-<h4 id="解决方案-12"><a href="#解决方案-12" class="headerlink" title="解决方案"></a>解决方案</h4><p>利用operator模块中的itemgetter函数对这类结构进行排序是非常简单的。</p>
+<pre><code>[(&apos;look&apos;, 4), (&apos;eyes&apos;, 4), (&apos;into&apos;, 2)]</code></pre><h3 id="13、通过公共键对字典列表排序-itemgetter"><a href="#13、通过公共键对字典列表排序-itemgetter" class="headerlink" title="13、通过公共键对字典列表排序(itemgetter)"></a>13、通过公共键对字典列表排序(itemgetter)</h3><h4 id="13-1、问题"><a href="#13-1、问题" class="headerlink" title="13.1、问题"></a>13.1、问题</h4><p>一个字典列表，想根据一个或多个字典中的值来对列表排序</p>
+<h4 id="13-2、解决方案"><a href="#13-2、解决方案" class="headerlink" title="13.2、解决方案"></a>13.2、解决方案</h4><p>利用operator模块中的itemgetter函数对这类结构进行排序是非常简单的。</p>
 <pre><code class="hljs python">rows = [
     &#123;<span class="hljs-string">'fname'</span>:<span class="hljs-string">'Brian'</span>,<span class="hljs-string">'lname'</span>:<span class="hljs-string">'Jones'</span>,<span class="hljs-string">'uid'</span>:<span class="hljs-number">1003</span>&#125;,
     &#123;<span class="hljs-string">'fname'</span>:<span class="hljs-string">'Drian'</span>,<span class="hljs-string">'lname'</span>:<span class="hljs-string">'Jones'</span>,<span class="hljs-string">'uid'</span>:<span class="hljs-number">1002</span>&#125;,
@@ -616,8 +616,8 @@ rows_by_uid = sorted(rows,key = itemgetter(<span class="hljs-string">'uid'</span
 <pre><code>[{&apos;fname&apos;: &apos;Crian&apos;, &apos;lname&apos;: &apos;Jones&apos;, &apos;uid&apos;: 1001},
  {&apos;fname&apos;: &apos;Drian&apos;, &apos;lname&apos;: &apos;Jones&apos;, &apos;uid&apos;: 1002},
  {&apos;fname&apos;: &apos;Brian&apos;, &apos;lname&apos;: &apos;Jones&apos;, &apos;uid&apos;: 1003},
- {&apos;fname&apos;: &apos;Arian&apos;, &apos;lname&apos;: &apos;Jones&apos;, &apos;uid&apos;: 1004}]</code></pre><h3 id="对不原生支持比较操作的对象排序（sorted（））"><a href="#对不原生支持比较操作的对象排序（sorted（））" class="headerlink" title="对不原生支持比较操作的对象排序（sorted（））"></a>对不原生支持比较操作的对象排序（sorted（））</h3><h4 id="问题-12"><a href="#问题-12" class="headerlink" title="问题"></a>问题</h4><p>在同一个类的实例之间做排序，但是他们并不原生支持比较操作。</p>
-<h4 id="解决方案-13"><a href="#解决方案-13" class="headerlink" title="解决方案"></a>解决方案</h4><p>使用<code>sorted()</code>函数可接受一个用来传递可调用对象（callable）的参数key，而该可调用对象会返回待排序对象中的某些值，<code>sorted</code>则利用这些值来比较对象。</p>
+ {&apos;fname&apos;: &apos;Arian&apos;, &apos;lname&apos;: &apos;Jones&apos;, &apos;uid&apos;: 1004}]</code></pre><h3 id="14、对不原生支持比较操作的对象排序（sorted（））"><a href="#14、对不原生支持比较操作的对象排序（sorted（））" class="headerlink" title="14、对不原生支持比较操作的对象排序（sorted（））"></a>14、对不原生支持比较操作的对象排序（sorted（））</h3><h4 id="14-1、问题"><a href="#14-1、问题" class="headerlink" title="14.1、问题"></a>14.1、问题</h4><p>在同一个类的实例之间做排序，但是他们并不原生支持比较操作。</p>
+<h4 id="14-2、解决方案"><a href="#14-2、解决方案" class="headerlink" title="14.2、解决方案"></a>14.2、解决方案</h4><p>使用<code>sorted()</code>函数可接受一个用来传递可调用对象（callable）的参数key，而该可调用对象会返回待排序对象中的某些值，<code>sorted</code>则利用这些值来比较对象。</p>
 <pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span>:</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,user_id)</span>:</span>
         self.user_id = user_id
@@ -649,8 +649,8 @@ TypeError: &apos;&lt;&apos; not supported between instances of &apos;User&apos; 
 
 
 
-<pre><code>[User(10), User(20), User(99)]</code></pre><h3 id="根据字段将记录分组（groupby-）"><a href="#根据字段将记录分组（groupby-）" class="headerlink" title="根据字段将记录分组（groupby()）"></a>根据字段将记录分组（groupby()）</h3><h4 id="问题-13"><a href="#问题-13" class="headerlink" title="问题"></a>问题</h4><p>有一系列的字典或对象实例，我们根据某个特定的字段（比如日期）来分组迭代数据。</p>
-<h4 id="解决方案-14"><a href="#解决方案-14" class="headerlink" title="解决方案"></a>解决方案</h4><p><code>itertools.groupby()</code>函数在对数据进行分组时特别有用。</p>
+<pre><code>[User(10), User(20), User(99)]</code></pre><h3 id="15、根据字段将记录分组（groupby-）"><a href="#15、根据字段将记录分组（groupby-）" class="headerlink" title="15、根据字段将记录分组（groupby()）"></a>15、根据字段将记录分组（groupby()）</h3><h4 id="15-1、问题"><a href="#15-1、问题" class="headerlink" title="15.1、问题"></a>15.1、问题</h4><p>有一系列的字典或对象实例，我们根据某个特定的字段（比如日期）来分组迭代数据。</p>
+<h4 id="15-2、解决方案"><a href="#15-2、解决方案" class="headerlink" title="15.2、解决方案"></a>15.2、解决方案</h4><p><code>itertools.groupby()</code>函数在对数据进行分组时特别有用。</p>
 <pre><code class="hljs python">rows = [
     &#123;<span class="hljs-string">'address'</span>:<span class="hljs-string">'5412 n CLARK'</span>,<span class="hljs-string">'date'</span>:<span class="hljs-string">'07/01/2012'</span>&#125;,
     &#123;<span class="hljs-string">'address'</span>:<span class="hljs-string">'5148 n CLARK'</span>,<span class="hljs-string">'date'</span>:<span class="hljs-string">'07/04/2012'</span>&#125;,
@@ -705,8 +705,8 @@ rows.sort(key = itemgetter(<span class="hljs-string">'date'</span>))</code></pre
   {&apos;address&apos;: &apos;1039 n CLARK&apos;, &apos;date&apos;: &apos;07/04/2012&apos;}</code></pre><blockquote>
 <p><code>groupby()</code>只能检查连续的项，不首先排序的话，将无法按照所想的方式来对记录分组</p>
 </blockquote>
-<h3 id="筛选序列中的元素-列表推导式、生成式，迭代式"><a href="#筛选序列中的元素-列表推导式、生成式，迭代式" class="headerlink" title="筛选序列中的元素(列表推导式、生成式，迭代式)"></a>筛选序列中的元素(列表推导式、生成式，迭代式)</h3><h4 id="问题-14"><a href="#问题-14" class="headerlink" title="问题"></a>问题</h4><p>序列中含有一些数据，需要提取出其中的值或根据某些标准对序列做删减。</p>
-<h4 id="解决方案-15"><a href="#解决方案-15" class="headerlink" title="解决方案"></a>解决方案</h4><p>列表推导式</p>
+<h3 id="16、筛选序列中的元素-列表推导式、生成式，迭代式"><a href="#16、筛选序列中的元素-列表推导式、生成式，迭代式" class="headerlink" title="16、筛选序列中的元素(列表推导式、生成式，迭代式)"></a>16、筛选序列中的元素(列表推导式、生成式，迭代式)</h3><h4 id="16-1、问题"><a href="#16-1、问题" class="headerlink" title="16.1、问题"></a>16.1、问题</h4><p>序列中含有一些数据，需要提取出其中的值或根据某些标准对序列做删减。</p>
+<h4 id="16-2、解决方案"><a href="#16-2、解决方案" class="headerlink" title="16.2、解决方案"></a>16.2、解决方案</h4><p>列表推导式</p>
 <pre><code class="hljs python">mylist = [<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">-5</span>,<span class="hljs-number">10</span>,<span class="hljs-number">-7</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">-1</span>]
 [n <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> mylist <span class="hljs-keyword">if</span> n&gt;<span class="hljs-number">0</span>]</code></pre>
 
@@ -743,8 +743,8 @@ print(ivals)</code></pre>
 <blockquote>
 <p><code>filter(func,list)</code>遍历list中的每个值</p>
 </blockquote>
-<h3 id="从字典中提取子集（字典推导式）"><a href="#从字典中提取子集（字典推导式）" class="headerlink" title="从字典中提取子集（字典推导式）"></a>从字典中提取子集（字典推导式）</h3><h4 id="问题-15"><a href="#问题-15" class="headerlink" title="问题"></a>问题</h4><p>创建一个字典，其本身是另一个字典的子集。</p>
-<h4 id="解决方案-16"><a href="#解决方案-16" class="headerlink" title="解决方案"></a>解决方案</h4><p>利用字典推导式。</p>
+<h3 id="17、从字典中提取子集（字典推导式）"><a href="#17、从字典中提取子集（字典推导式）" class="headerlink" title="17、从字典中提取子集（字典推导式）"></a>17、从字典中提取子集（字典推导式）</h3><h4 id="17-1、问题"><a href="#17-1、问题" class="headerlink" title="17.1、问题"></a>17.1、问题</h4><p>创建一个字典，其本身是另一个字典的子集。</p>
+<h4 id="17-2、解决方案"><a href="#17-2、解决方案" class="headerlink" title="17.2、解决方案"></a>17.2、解决方案</h4><p>利用字典推导式。</p>
 <pre><code class="hljs python">prices = &#123;
     <span class="hljs-string">'ACME'</span>:<span class="hljs-number">45.23</span>,
     <span class="hljs-string">'AAPL'</span>:<span class="hljs-number">612.78</span>,
@@ -767,8 +767,8 @@ p2</code></pre>
 
 
 
-<pre><code>{&apos;AAPL&apos;: 612.78, &apos;IBM&apos;: 205.55}</code></pre><h3 id="将名称映射到序列的元素中（collections-namedtuple（名命元组））"><a href="#将名称映射到序列的元素中（collections-namedtuple（名命元组））" class="headerlink" title="将名称映射到序列的元素中（collections.namedtuple（名命元组））"></a>将名称映射到序列的元素中（<code>collections.namedtuple</code>（名命元组））</h3><h4 id="问题-16"><a href="#问题-16" class="headerlink" title="问题"></a>问题</h4><p>代码是通过位置（即索引、下标）来访问列表和元组的，但有时这会使代码变得难以阅读。希望可以通过名称以及相应的字段，减少结构中对位置的依赖性。</p>
-<h4 id="解决方案-17"><a href="#解决方案-17" class="headerlink" title="解决方案"></a>解决方案</h4><p><code>collections.namedtuple</code>（名命元组）只增加极小的开销就提供了这些便利。</p>
+<pre><code>{&apos;AAPL&apos;: 612.78, &apos;IBM&apos;: 205.55}</code></pre><h3 id="18、将名称映射到序列的元素中（collections-namedtuple（名命元组））"><a href="#18、将名称映射到序列的元素中（collections-namedtuple（名命元组））" class="headerlink" title="18、将名称映射到序列的元素中（collections.namedtuple（名命元组））"></a>18、将名称映射到序列的元素中（<code>collections.namedtuple</code>（名命元组））</h3><h4 id="18-1、问题"><a href="#18-1、问题" class="headerlink" title="18.1、问题"></a>18.1、问题</h4><p>代码是通过位置（即索引、下标）来访问列表和元组的，但有时这会使代码变得难以阅读。希望可以通过名称以及相应的字段，减少结构中对位置的依赖性。</p>
+<h4 id="18-2、解决方案"><a href="#18-2、解决方案" class="headerlink" title="18.2、解决方案"></a>18.2、解决方案</h4><p><code>collections.namedtuple</code>（名命元组）只增加极小的开销就提供了这些便利。</p>
 <pre><code class="hljs python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> namedtuple
 Subscriber = namedtuple(<span class="hljs-string">'Subscriber'</span>,[<span class="hljs-string">'addr'</span>,<span class="hljs-string">'joined'</span>])
 sub = Subscriber(<span class="hljs-string">'715182260@qq.com'</span>,joined = <span class="hljs-string">'2012-10-19'</span>)</code></pre>
@@ -782,8 +782,8 @@ sub = Subscriber(<span class="hljs-string">'715182260@qq.com'</span>,joined = <s
 <pre><code>Subscriber(addr=&apos;715182260@qq.com&apos;, joined=&apos;2012-10-19&apos;)</code></pre><blockquote>
 <p>相对于字典有更小的开销，且不能改变</p>
 </blockquote>
-<h3 id="同时对数据做转换和换算（在函数参数中使用生成器）"><a href="#同时对数据做转换和换算（在函数参数中使用生成器）" class="headerlink" title="同时对数据做转换和换算（在函数参数中使用生成器）"></a>同时对数据做转换和换算（在函数参数中使用生成器）</h3><h4 id="问题-17"><a href="#问题-17" class="headerlink" title="问题"></a>问题</h4><p>需要调用一个换算（reduction）函数（例如sum()、min()、max()）,但首先得对数据做转换或筛选》</p>
-<h4 id="解决方案-18"><a href="#解决方案-18" class="headerlink" title="解决方案"></a>解决方案</h4><p>在函数参数中使用生成器表达式。</p>
+<h3 id="19、同时对数据做转换和换算（在函数参数中使用生成器）"><a href="#19、同时对数据做转换和换算（在函数参数中使用生成器）" class="headerlink" title="19、同时对数据做转换和换算（在函数参数中使用生成器）"></a>19、同时对数据做转换和换算（在函数参数中使用生成器）</h3><h4 id="19-1、问题"><a href="#19-1、问题" class="headerlink" title="19.1、问题"></a>19.1、问题</h4><p>需要调用一个换算（reduction）函数（例如sum()、min()、max()）,但首先得对数据做转换或筛选》</p>
+<h4 id="19-2、解决方案"><a href="#19-2、解决方案" class="headerlink" title="19.2、解决方案"></a>19.2、解决方案</h4><p>在函数参数中使用生成器表达式。</p>
 <pre><code class="hljs python">nums = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
 s=sum(x*x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> nums)
 s</code></pre>
@@ -791,8 +791,8 @@ s</code></pre>
 
 
 
-<pre><code>55</code></pre><h3 id="将多个映射合并为单个映射（collections-ChainMap）"><a href="#将多个映射合并为单个映射（collections-ChainMap）" class="headerlink" title="将多个映射合并为单个映射（collections.ChainMap）"></a>将多个映射合并为单个映射（collections.ChainMap）</h3><h4 id="问题-18"><a href="#问题-18" class="headerlink" title="问题"></a>问题</h4><p>有多个映射，想在逻辑上将他们合并为一个单独的映射结构，以此执行某些特定的操作，比如查找值或检查键是否存在。</p>
-<h4 id="解决方案-19"><a href="#解决方案-19" class="headerlink" title="解决方案"></a>解决方案</h4><pre><code class="hljs python">a = &#123;<span class="hljs-string">'x'</span>:<span class="hljs-number">1</span>,<span class="hljs-string">'z'</span>:<span class="hljs-number">3</span>&#125;
+<pre><code>55</code></pre><h3 id="20、将多个映射合并为单个映射（collections-ChainMap）"><a href="#20、将多个映射合并为单个映射（collections-ChainMap）" class="headerlink" title="20、将多个映射合并为单个映射（collections.ChainMap）"></a>20、将多个映射合并为单个映射（collections.ChainMap）</h3><h4 id="20-1、问题"><a href="#20-1、问题" class="headerlink" title="20.1、问题"></a>20.1、问题</h4><p>有多个映射，想在逻辑上将他们合并为一个单独的映射结构，以此执行某些特定的操作，比如查找值或检查键是否存在。</p>
+<h4 id="20-2解决方案"><a href="#20-2解决方案" class="headerlink" title="20.2解决方案"></a>20.2解决方案</h4><pre><code class="hljs python">a = &#123;<span class="hljs-string">'x'</span>:<span class="hljs-number">1</span>,<span class="hljs-string">'z'</span>:<span class="hljs-number">3</span>&#125;
 b = &#123;<span class="hljs-string">'y'</span>:<span class="hljs-number">2</span>,<span class="hljs-string">'z'</span>:<span class="hljs-number">4</span>&#125;</code></pre>
 
 
