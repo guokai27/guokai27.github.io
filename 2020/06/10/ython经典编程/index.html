@@ -143,7 +143,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    2.2k 字
+                    2.5k 字
                   </span>
                 
 
@@ -153,7 +153,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    29
+                    35
                      分钟
                   </span>
                 
@@ -332,11 +332,53 @@ d</code></pre>
 </ul>
 <h3 id="列表去重"><a href="#列表去重" class="headerlink" title="列表去重"></a>列表去重</h3><p>列表去重在不考虑顺序的情况下可以直接使用set()转换（转换后会自动排序），需要保持顺序可以使用字典构建的fromkeys()方法，利用字典键值的唯一性去重。</p>
 <p>l = [2,1,2,3,4,5,6,6,5,4,3,2,1]</p>
-<h3 id="列表分组"><a href="#列表分组" class="headerlink" title="列表分组"></a>列表分组</h3><p>一串字母数字组合的字符串，找出相同的字母或数字，并按照个数排序。</p>
+<pre><code class="hljs python"><span class="hljs-comment"># 不考虑顺序</span>
+l = [<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]
+l = list(set(l))
+l</code></pre>
+
+
+
+
+<pre><code>[1, 2, 3, 4, 5, 6]</code></pre><pre><code class="hljs python"><span class="hljs-comment"># 考虑顺序</span>
+i = [<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]
+s = dict.fromkeys(i,<span class="hljs-string">''</span>)
+list(s.keys())</code></pre>
+
+
+
+
+<pre><code>[2, 1, 3, 4, 5, 6]</code></pre><h3 id="列表分组"><a href="#列表分组" class="headerlink" title="列表分组"></a>列表分组</h3><p>一串字母数字组合的字符串，找出相同的字母或数字，并按照个数排序。</p>
 <p>l = [1,2,3,’a’,’b’,’c’,1,2,’a’,’b’,3,’c’,’d’,’a’,’b’,1]</p>
-<h3 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h3><p>l=[1,2,3,4,5,6,7,8] 数据不重复，target=6，快速找出数组中两个元素之和等于target 的数组下标。</p>
+<pre><code class="hljs python">l = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-string">'a'</span>,<span class="hljs-string">'b'</span>,<span class="hljs-string">'c'</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-string">'a'</span>,<span class="hljs-string">'b'</span>,<span class="hljs-number">3</span>,<span class="hljs-string">'c'</span>,<span class="hljs-string">'d'</span>,<span class="hljs-string">'a'</span>,<span class="hljs-string">'b'</span>,<span class="hljs-number">1</span>]
+set1 = set(l)
+result = [(item,l.count(item)) <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> set1]
+result.sort(key=<span class="hljs-keyword">lambda</span> x:x[<span class="hljs-number">1</span>],reverse=<span class="hljs-literal">True</span>)
+result</code></pre>
+
+
+
+
+<pre><code>[(1, 3), (&apos;b&apos;, 3), (&apos;a&apos;, 3), (2, 2), (3, 2), (&apos;c&apos;, 2), (&apos;d&apos;, 1)]</code></pre><pre><code class="hljs python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter
+
+s = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'d'</span>]
+c = Counter(s)
+print(c)</code></pre>
+
+<pre><code>Counter({&apos;d&apos;: 5, 1: 3, &apos;a&apos;: 3, &apos;b&apos;: 3, 2: 2, 3: 2, &apos;c&apos;: 2})</code></pre><h3 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h3><p>l=[1,2,3,4,5,6,7,8] 数据不重复，target=6，快速找出数组中两个元素之和等于target 的数组下标。</p>
 <p>注意，不要使用双重循环，暴力加和来和target对比，正确的做法是单层循环，然后查找target与当前值的差，是否存在于列表中。<br>但是由于列表的in查询时间复杂度是O(n)，即隐含了一层循环，这样效率其实和双重循环是一样的，都是O(n^2)。<br>这里就可以使用哈希来优化查询差值是否在列表中操作，将O(n)降为O(1)，因此总体的效率就会变成O(n^2)-&gt;O(n)。</p>
-<h2 id="递归问题"><a href="#递归问题" class="headerlink" title="递归问题"></a>递归问题</h2><p>递归是一种循环调用自身的函数。可以用于解决以下高频问题：</p>
+<pre><code class="hljs python">
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">target</span><span class="hljs-params">(num,l)</span>:</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> l:
+        <span class="hljs-keyword">if</span> num - i <span class="hljs-keyword">in</span> l:
+            <span class="hljs-keyword">return</span> i,num-i
+l = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>]
+target(<span class="hljs-number">6</span>,l)</code></pre>
+
+
+
+
+<pre><code>(1, 5)</code></pre><h2 id="递归问题"><a href="#递归问题" class="headerlink" title="递归问题"></a>递归问题</h2><p>递归是一种循环调用自身的函数。可以用于解决以下高频问题：</p>
 <ul>
 <li>阶乘</li>
 <li>斐波那切数列</li>
@@ -363,7 +405,17 @@ d</code></pre>
 <li><p>推导：(n-1)层的结果 * n</p>
 </li>
 </ul>
-<h3 id="跳台阶、变态跳台阶"><a href="#跳台阶、变态跳台阶" class="headerlink" title="跳台阶、变态跳台阶"></a>跳台阶、变态跳台阶</h3><ul>
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">jie</span><span class="hljs-params">(num)</span>:</span>
+    <span class="hljs-keyword">if</span> num == <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> num*jie(num<span class="hljs-number">-1</span>)
+jie(<span class="hljs-number">4</span>)</code></pre>
+
+
+
+
+<pre><code>24</code></pre><h3 id="跳台阶、变态跳台阶"><a href="#跳台阶、变态跳台阶" class="headerlink" title="跳台阶、变态跳台阶"></a>跳台阶、变态跳台阶</h3><ul>
 <li><p>跳台阶：一只青蛙，一次可以跳上1阶，也可以跳上2阶，问跳上n阶有多少种跳法。</p>
 </li>
 <li><p>变态跳台阶：一只青蛙，一次可以跳上1阶，可以一次跳上n阶，为跳上n阶有多少种跳法。</p>
@@ -376,13 +428,29 @@ d</code></pre>
 <li><p>推导：(n-1)层的结果 + (n-2)层的结果</p>
 </li>
 </ul>
-<p>变态跳台阶只是推导方式不同，每一层的结果是上一层跳法的2倍。</p>
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tiao</span><span class="hljs-params">(n)</span>:</span>
+    <span class="hljs-keyword">if</span> n&lt;=<span class="hljs-number">2</span>:
+        <span class="hljs-keyword">return</span> n
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> tiao(n<span class="hljs-number">-1</span>)+tiao(n<span class="hljs-number">-2</span>)
+tiao(<span class="hljs-number">9</span>)</code></pre>
+
+
+
+
+<pre><code>55</code></pre><p>变态跳台阶只是推导方式不同，每一层的结果是上一层跳法的2倍。</p>
 <ul>
 <li><p>出口：n &lt;= 2，返回n</p>
 </li>
 <li><p>推导：(n-1)层的结果 * 2</p>
 </li>
 </ul>
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bian_tiao</span><span class="hljs-params">(n)</span>:</span>
+    <span class="hljs-keyword">if</span> n&lt;=<span class="hljs-number">2</span>:
+        <span class="hljs-keyword">return</span> n
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> bian_tiao(n<span class="hljs-number">-1</span>)*<span class="hljs-number">2</span></code></pre>
+
 <h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>二分查找需要序列首先有序。思想是先用序列中间数和目标值对比，如果目标值小，则从前半部分（小于中间数）重复此查找，否则从后半部分重复此查找。</p>
 <ul>
 <li><p>出口1：中间数和目标数相同，返回中间数下标</p>
@@ -392,6 +460,18 @@ d</code></pre>
 <li><p>推导：</p>
 </li>
 </ul>
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bin_search</span><span class="hljs-params">(l, n)</span>:</span> 
+    <span class="hljs-comment"># 列表为空，返回</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> l:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+    mid = len(l) // <span class="hljs-number">2</span>
+    <span class="hljs-comment"># 中间数与目标值相同，返回中间值下标</span>
+    <span class="hljs-keyword">if</span> l[mid] == n:
+        <span class="hljs-keyword">return</span> mid
+    <span class="hljs-keyword">if</span> l[mid] &gt; n:
+        <span class="hljs-keyword">return</span> bin_search(l[:mid],n)
+    <span class="hljs-keyword">return</span> bin_search(l[mid+<span class="hljs-number">1</span>:],n)</code></pre>
+
 <h3 id="全排序"><a href="#全排序" class="headerlink" title="全排序"></a>全排序</h3><p>举个例子，比如你要对a,b,c三个字符进行全排列，那么它的全排列有abc,acb,bac,bca,cba,cab这六种可能，你们想想你们是如何得出这六种可能的。没错！就是当指针指向第一个元素a时，它可以是其本身a(即和自己进行交换)，还可以和b，c进行交换，故有3种可能，当第一个元素a确定以后，指针移向第二位置，第二个位置可以和其本身b及其后的元素c进行交换，又可以形成两种排列，当指针指向第三个元素c的时候，这个时候其后没有元素了，此时，则确定了一组排列，输出。但是每次输出后要把数组恢复为原来的样子。</p>
 <p>简单来说，它的思想即为，确定第1位，对n-1位进行全排列，确定第二位，对n-2位进行全排列。。。显然，这是一种递归的思想。</p>
 <ul>
